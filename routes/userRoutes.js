@@ -18,7 +18,7 @@ router.route("/change/password").put(auth, changePassword);
 router.route("/me").get(auth, singleUser);
 //for admin routes
 router.route("/all/user").get(auth, isAuthAdmin, getAllUsers);
-//for single user on;y admin can get
+//for single user only admin can get
 router.route("/single/user/:id").get(auth, isAuthAdmin, getSingleUserByAdmin);
 //for delete single user by admin only
 router.route("/delete/user/:id").delete(auth, isAuthAdmin, deleteSingleUser);
