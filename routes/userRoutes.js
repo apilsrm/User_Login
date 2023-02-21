@@ -1,7 +1,18 @@
 const express = require("express");
-const { register, login } = require("../controllers/userController");
+const {
+  register,
+  login,
+  profileUpdate,
+  changePassword,
+  singleUser,
+  getAllUsers,
+  getSingleUserByAdmin,
+  deleteSingleUser,
+} = require("../controllers/userController");
+const { auth, isAuthAdmin } = require("../middlewares/auth");
 const singleUpload = require("../middlewares/multer");
 // const createUser = require("../controllers/userController");
+
 const router = express.Router();
 
 //register User Routes

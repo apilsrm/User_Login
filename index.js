@@ -7,6 +7,7 @@ const colors = require("colors");
 const ConnectionDB = require("./config/db");
 const logger = require("morgan"); //its showa hit method in console
 const cloudinary = require("cloudinary");
+const errorMiddlewars = require("./middlewares/error");
 
 //configure
 dotenv.config();
@@ -41,6 +42,9 @@ app.use(express.static("public/gallery"));
 app.get("/", (req, res) => {
   res.send("<h1>Server is running</h1>");
 });
+
+//Middlewars call
+app.use(errorMiddlewars);
 
 //port
 const PORT = process.env.PORT;
